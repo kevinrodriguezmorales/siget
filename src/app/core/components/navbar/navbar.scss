@@ -1,11 +1,12 @@
 .navbar {
   padding: 44px 0;
-  border-right: 1px solid var(--mat-sys-outline);
+  border-right: 1px solid var(--mat-sys-outline-variant);
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  max-width: 72px;
 
   &__menu {
     width: 56px;

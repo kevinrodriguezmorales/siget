@@ -24,7 +24,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-list-employees',
+  selector: 'list-employees',
   imports: [...MATERIAL_IMPORTS, MatToolbarModule, MatTableModule],
   templateUrl: './list-employees.html',
   styleUrl: './list-employees.scss',
