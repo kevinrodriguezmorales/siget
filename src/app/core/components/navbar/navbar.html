@@ -1,0 +1,11 @@
+<div class="navbar">
+  <button matIconButton class="navbar__menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <nav class="navigation">
+    @for (item of menuItems; track item.label) {
+      <navigation-item [config]="item" (click)="navigate(item.route)"></navigation-item>
+    }
+  </nav>
+</div>

@@ -1,0 +1,26 @@
+.inner {
+  &-toolbar {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+
+    &__back {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__title {
+      font-size: 20px;
+      line-height: 28px;
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+
+  &-layout {
+    padding: 24px 56px;
+  }
+}

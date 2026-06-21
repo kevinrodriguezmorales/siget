@@ -1,0 +1,21 @@
+.inner-layout {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+
+  height: calc(100% - 64px);
+}
+
+.inner-content {
+  flex-grow: 1;
+  padding-right: 16px;
+  padding-bottom: 16px;
+}
+
+.inner-router {
+  background-color: var(--mat-sys-surface-container-lowest);
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  overflow: auto;
+}

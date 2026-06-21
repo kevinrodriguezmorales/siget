@@ -1,0 +1,13 @@
+.wrapper-main {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  background-color: var(--mat-sys-surface);
+
+  height: 100%;
+}
+
+.content-main {
+  flex-grow: 1;
+}

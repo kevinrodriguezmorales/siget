@@ -1,0 +1,22 @@
+.navbar {
+  padding: 44px 0;
+  border-right: 1px solid var(--mat-sys-outline);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  &__menu {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.navigation {
+  display: grid;
+  gap: 4px;
+}
