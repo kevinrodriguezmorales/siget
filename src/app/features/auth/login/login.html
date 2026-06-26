@@ -1,0 +1,33 @@
+<div class="login flex">
+  <div class="login-wrapper flex">
+    <div class="login-form flex flex-column justify-content-center flex-gap-l">
+      <div class="login-form__header">
+        <h2>Inicio de sesión</h2>
+        <p>Ingresa tus credenciales para inicias sesión</p>
+      </div>
+      <div class="login-form__body flex flex-column">
+        <div class="flex flex-column flex-gap-xxs">
+          <mat-form-field appearance="outline">
+            <mat-label>Usuario</mat-label>
+            <input matInput placeholder="Ingresa tu usuario">
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" placeholder="Ingresa tu contraseña">
+            <mat-icon matSuffix>visibility</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <button matButton="filled" [routerLink]="'/inicio'">Iniciar sesión</button>
+      </div>
+    </div>
+
+    <div class="login-welcome flex flex-column align-items-end justify-content-between flex-grow">
+      <div class="login-welcome__logo"><img src="../../../../assets/images/siget-default.svg"></div>
+      <div class="login-welcome__phrase">
+        <h2>Sistema Integral de Gestión de Taller</h2>
+      </div>
+    </div>
+  </div>
+</div>

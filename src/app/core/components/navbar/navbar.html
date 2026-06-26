@@ -5,7 +5,9 @@
 
   <nav class="navigation">
     @for (item of menuItems; track item.label) {
-      <navigation-item [config]="item" (click)="navigate(item.route)"></navigation-item>
+      <div [routerLink]="item.route" routerLinkActive="active" #rla="routerLinkActive">
+        <navigation-item [config]="item" [active]="rla.isActive"></navigation-item>
+      </div>
     }
   </nav>
 </div>

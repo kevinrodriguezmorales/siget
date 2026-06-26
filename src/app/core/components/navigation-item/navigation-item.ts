@@ -8,5 +8,6 @@ import { NavItem } from '@core/config/navbar.config';
   styleUrl: './navigation-item.scss',
 })
 export class NavigationItem {
-  @Input() config: NavItem | null = null
+  @Input() config: NavItem | null = null;
+  @Input() active = false;
 }

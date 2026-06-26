@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { NavigationItem } from '../navigation-item/navigation-item';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
 import { NAVBAR_ITEMS, NavItem } from '@core/config/navbar.config';
 
 @Component({
   selector: 'navbar',
-  imports: [...MATERIAL_IMPORTS, NavigationItem],
+  imports: [...MATERIAL_IMPORTS, NavigationItem, RouterLink, RouterLinkActive],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })

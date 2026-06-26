@@ -1,13 +1,49 @@
 .navigation {
-  &__item {
+  &-item {
     text-align: center;
     width: 100%;
     padding-bottom: 6px;
 
-    .filled {
+    & .filled {
       display: none;
     }
+
+    &:hover {
+      cursor: pointer;
+
+      & .material-symbols {
+        font-variation-settings:
+          "wght" 700,
+          "opsz" 24;
+        color: var(--mat-sys-on-secondary-container);
+      }
+
+      & .state-layer::before {
+        transform: scaleX(2);
+      }
+    }
+
+    &.active {
+      & .material-symbols {
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 600,
+          "opsz" 24;
+        color: var(--mat-sys-on-secondary-container);
+      }
+
+      & .state-layer::before {
+        background: var(--mat-sys-secondary-container);
+        opacity: 1;
+        transform: scaleX(2);
+      }
+    }
   }
+}
+
+.material-symbols {
+  color: var(--mat-sys-on-surface-variant);
+  transition: font-variation-settings 0.2s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .icon-container {
@@ -20,6 +56,22 @@
   align-items: center;
   justify-content: center;
   min-height: 32px;
+  transition: 0.3s all linear;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    transition: 0.15s all ease-in-out;
+    background-color: var(--mat-sys-on-surface-variant);
+    opacity: 0.08;
+    transform: scaleX(0);
+    transform-origin: center;
+    z-index: -1;
+  }
 }
 
 .label-text {
@@ -27,12 +79,4 @@
   font-weight: bold;
   color: var(--mat-sys-secondary);
   font-family: var(--mat-sys-label-medium-font);
-}
-
-.navigation {
-  & .navigation__item.active {
-    & .state-layer {
-      background: var(--mat-sys-secondary-container);
-    }
-  }
 }
