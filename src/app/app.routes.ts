@@ -1,11 +1,16 @@
 import { Routes } from '@angular/router';
 import { Layout } from '@core/layout/layout';
+import { Login } from '@features/auth/login/login';
 import { Home } from '@features/home/home';
 import { Employees } from '@features/personnel-access/employees/employees';
 import { ListEmployees } from '@features/personnel-access/employees/list-employees/list-employees';
 import { PersonnelAccess } from '@features/personnel-access/personnel-access';
 
 export const routes: Routes = [
+  {
+    path: 'login',
+    component: Login
+  },
   {
     path: '',
     component: Layout,
@@ -23,5 +28,5 @@ export const routes: Routes = [
       }
     ],
   },
-  { path: '**', redirectTo: 'inicio' },
+  { path: '**', redirectTo: 'login' },
 ];
