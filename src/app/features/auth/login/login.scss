@@ -25,6 +25,7 @@
     z-index: 2;
     position: relative;
     height: 100%;
+    width: 100%;
   }
 
   &-form {
@@ -37,7 +38,31 @@
       font-family: var(--mat-sys-headline-large-font);
       font-size: var(--mat-sys-headline-large-size);
       line-height: var(--mat-sys-headline-large-line-height);
-      margin: 0;
+    }
+
+    & button {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &-welcome {
+    font-family: var(--mat-sys-display-small-font);
+    color: white;
+    padding: 64px;
+
+    &__logo {
+      height: 40px;
+    }
+
+    &__phrase {
+      width: 55%;
+      text-align: right;
+
+      & h2 {
+        font-size: var(--mat-sys-display-medium-size);
+        line-height: var(--mat-sys-display-medium-line-height);
+        font-weight: 600;
+      }
     }
   }
 }

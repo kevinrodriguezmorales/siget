@@ -5,7 +5,7 @@
 // custom components at https://material.angular.dev/guide/theming
 @use "@angular/material" as mat;
 @use "assets/themes/theme-typography" as *;
-@use 'assets/themes/theme-colors.scss' as my-theme;
+@use "assets/themes/theme-colors.scss" as my-theme;
 
 *,
 *::after,
@@ -45,12 +45,19 @@ body {
   // Reset the user agent margin.
   margin: 0;
   height: 100vh;
-  font-family: 'Cabin';
+  font-family: "Cabin";
+  font-size: 16px;
 }
 /* You can add global styles to this file, and also import other style files */
 
 img {
   height: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
 }
 
 .material-symbols-outlined.filled {
@@ -73,12 +80,43 @@ img {
   }
 }
 
+.flex-gap {
+
+  &-xxs {
+    gap: 0.25rem;
+  }
+
+  &-xs {
+    gap: 0.5rem;
+  }
+
+  &-s {
+    gap: 1rem;
+  }
+
+  &-m {
+    gap: 1.5rem;
+  }
+
+  &-l {
+    gap: 3rem;
+  }
+}
+
 .align-items-start {
   align-items: start;
 }
 
+.align-items-end {
+  align-items: end;
+}
+
 .justify-content-center {
   justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
 }
 
 // height: 100%;
@@ -247,3 +285,6 @@ img {
 //     --mat-sys-focus-state-layer-opacity: 0.12;
 //     --mat-sys-hover-state-layer-opacity: 0.08;
 //     --mat-sys-pressed-state-layer-opacity: 0.12;
+
+// em: relativo al tamaño de fuente del elemento padre.
+// rem: relativo al tamaño de fuente del elemento raíz (html).
