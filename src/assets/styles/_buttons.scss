@@ -1,0 +1,19 @@
+.button-xsmall {
+  --size: 32px;
+  --font-size: 20px;
+  width: var(--size) !important;
+  height: var(--size) !important;
+  padding: calc((var(--size) - var(--font-size)) / 2) !important;
+  font-size: var(--font-size) !important;
+  border-radius: var(--mat-sys-corner-medium) !important;
+
+  & .mat-mdc-button-persistent-ripple {
+    border-radius: var(--mat-sys-corner-medium) !important;
+  }
+
+  & .mat-icon {
+    font-size: inherit;
+    height: var(--font-size);
+    width: var(--font-size);
+  }
+}

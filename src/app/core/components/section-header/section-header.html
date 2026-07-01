@@ -1,0 +1,41 @@
+<header [ngClass]="type">
+  <ng-template #titleSlot>
+    <ng-content select="[headerTitle]"></ng-content>
+  </ng-template>
+
+  <ng-template #descriptionSlot>
+    <ng-content select="[headerDescription]"></ng-content>
+  </ng-template>
+
+  @switch (type) {
+    @case ('page') {
+      <h2 class="header-title headline-l">
+        <ng-container [ngTemplateOutlet]="titleSlot"></ng-container>
+      </h2>
+
+      <span class="header-description body-small header-description">
+        <ng-container [ngTemplateOutlet]="descriptionSlot"></ng-container>
+      </span>
+    }
+
+    @case ('section') {
+      <h3 class="header-title body-large font-bold">
+        <ng-container [ngTemplateOutlet]="titleSlot"></ng-container>
+      </h3>
+
+      <span class="header-description body-small on-surface-variant-50">
+        <ng-container [ngTemplateOutlet]="descriptionSlot"></ng-container>
+      </span>
+    }
+
+    @case ('form') {
+      <label [for]="forLabel" class="header-title">
+        <ng-container [ngTemplateOutlet]="titleSlot"></ng-container>
+      </label>
+
+      <span class="header-description body-small on-surface-variant-50">
+        <ng-container [ngTemplateOutlet]="descriptionSlot"></ng-container>
+      </span>
+    }
+  }
+</header>

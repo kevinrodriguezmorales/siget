@@ -1,0 +1,17 @@
+.header{
+  &-title {
+    color: var(--mat-sys-on-surface);
+  }
+  
+  &-description {
+    display: block;
+  }
+}
+
+.page {
+  & .header {
+    &-description {
+      color: var(--mat-sys-on-surface-variant);
+    }
+  }
+}

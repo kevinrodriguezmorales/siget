@@ -1,0 +1,13 @@
+<div class="data-card padding-xxs operational-summary">
+  <div class="flex justify-content-between margin-bottom-xxs padding-top-xxs padding-right-xxs padding-left-xxs padding-bottom-xxs">
+    <div
+      class="data-card__header flex align-items-center gap-xs padding-top-xxs padding-right-xxs padding-left-xxs">
+      <span class="material-symbols">{{ icon }}</span>
+      <span class="body-small font-semibold">{{ title }}</span>
+    </div>
+    <ng-content select="[action]"></ng-content>
+  </div>
+  <div class="data-card__body">
+    <ng-content select="[mainContent]"></ng-content>
+  </div>
+</div>

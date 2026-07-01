@@ -1,13 +1,15 @@
 <div class="navbar">
-  <button matIconButton class="navbar__menu">
-    <mat-icon>menu</mat-icon>
-  </button>
-
-  <nav class="navigation">
-    @for (item of menuItems; track item.label) {
-      <div [routerLink]="item.route" routerLinkActive="active" #rla="routerLinkActive">
-        <navigation-item [config]="item" [active]="rla.isActive"></navigation-item>
-      </div>
-    }
-  </nav>
+  <div class="navbar-container flex flex-column align-items-center">
+    <button matIconButton class="navbar__menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+    <nav class="navigation">
+      @for (item of menuItems; track item.label) {
+        <div [routerLink]="item.route" routerLinkActive="active" #rla="routerLinkActive">
+          <navigation-item [config]="item" [active]="rla.isActive"></navigation-item>
+        </div>
+      }
+    </nav>
+  </div>
 </div>

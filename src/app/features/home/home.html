@@ -1,1 +1,137 @@
-<p>home works!</p>
+<div class="inner-content">
+  <div class="main-panel">
+
+    <div class="header">
+      <div class="flex align-items-center flex-gap-xs">
+        <div class="header-icon flex align-items-center justify-content-center">
+          <span class="material-symbols">analytics</span>
+        </div>
+        <h3>Dashboard</h3>
+      </div>
+    </div>
+
+    <div class="container-xl margin-top-md margin-horizontal-auto padding-horizontal-md">
+      <div class="welcome margin-bottom-xl">
+        <div class="flex justify-content-between">
+          <div class="welcome-content">
+            <h2 class="headline-small font-bold">Bienvenido, Jose!</h2>
+            <p class="body-large font-regular">La información registrada hoy mejora el servicio de mañana.</p>
+          </div>
+          <date-hour></date-hour>
+        </div>
+      </div>
+
+      <section class="section-page margin-bottom-lg">
+        <div class="margin-bottom-md">
+          <section-header [type]="'section'">
+            <ng-container headerTitle>Operaciones frecuentes</ng-container>
+            <ng-container headerDescription>Continúa tus operaciones frecuentes más utilizados en el
+              taller.</ng-container>
+          </section-header>
+        </div>
+
+        <div class="grid grid-4 gap-md">
+          @for (item of list; track $index) {
+          <div class="quick-access flex-inline align-items-center padding-xs justify-content-between">
+            <div class="flex align-items-center gap-xs">
+              <span class="material-symbols">assignment_ind</span>
+              <span class="body-small font-semibold">Registrar empleado</span>
+            </div>
+            <button matIconButton class="navbar__menu">
+              <mat-icon>link</mat-icon>
+            </button>
+          </div>
+          }
+        </div>
+      </section>
+
+      <section class="section-page margin-bottom-lg">
+        <div class="margin-bottom-md">
+          <section-header [type]="'section'">
+            <ng-container headerTitle>Resumen operativo</ng-container>
+            <ng-container headerDescription>Revisa los principales registros y operaciones activas del
+              día.</ng-container>
+          </section-header>
+        </div>
+
+        <div class="grid grid-4 gap-md">
+          @for (item of metricCards; track $index) {
+          <information-container [icon]="item.icon" [title]="item.title">
+            <ng-container mainContent>
+              <div class="padding-sm">
+                <div class="data-card__value headline-large font-bold margin-bottom-xs">{{ item.value }}</div>
+                <div class="flex gap-xxs">
+                  <span class="material-symbols icon-small" [class]="{
+                      'on-surface-success': item.tone === 'positive',
+                      'on-surface-danger': item.tone === 'negative'
+                    }">
+                    @if (item.trend === "up") {
+                    arrow_upward
+                    } @else {
+                    arrow_downward
+                    }
+                  </span>
+                  <span class="body-small">{{ item.description }}</span>
+                </div>
+              </div>
+            </ng-container>
+          </information-container>
+          }
+        </div>
+      </section>
+
+      <section class="margin-bottom-xxl">
+        <information-container icon="checklist_rtl" title="Órdenes de servicio">
+          <ng-container action>
+            <button matIconButton class="button-xsmall">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </ng-container>
+          <ng-container mainContent>
+            <div class="">
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="code">
+                  <th mat-header-cell *matHeaderCellDef> Código </th>
+                  <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="customer">
+                  <th mat-header-cell *matHeaderCellDef> Cliente </th>
+                  <td mat-cell *matCellDef="let element"> {{element.customer}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="motorcycle">
+                  <th mat-header-cell *matHeaderCellDef> Motocicleta </th>
+                  <td mat-cell *matCellDef="let element"> {{element.motorcycle}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="status">
+                  <th mat-header-cell *matHeaderCellDef> Estado </th>
+                  <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="responsible">
+                  <th mat-header-cell *matHeaderCellDef> Responsable </th>
+                  <td mat-cell *matCellDef="let element"> {{element.responsible}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                  <th mat-header-cell *matHeaderCellDef> Acción </th>
+                  <td mat-cell *matCellDef="let element">
+                    <button matIconButton class="button-medium">
+                      <span class="material-symbols">document_search</span>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            </div>
+          </ng-container>
+        </information-container>
+      </section>
+    </div>
+  </div>
+</div>

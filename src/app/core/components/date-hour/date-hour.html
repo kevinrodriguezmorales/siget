@@ -1,0 +1,13 @@
+<div class="date-hour flex">
+  <div class="date-hour__date flex flex-column">
+    <span class="date-hour__day title-large font-bold block">{{ currentDate() | date: 'dd' }}</span>
+    <span class="date-hour__month body-small block">{{ currentDate() | date: 'MMM' | uppercase }}</span>
+  </div>
+  <div class="date-hour__time flex flex-column">
+    <div class="flex align-items-baseline gap-xxs">
+      <span class="date-hour__hour title-large font-bold">{{ currentDate() | date: 'HH:mm' }}</span>
+      <span class="date-hour__meridiem label-medium font-bold">{{ currentDate() | date: 'aa' | lowercase }}</span>
+    </div>
+    <span class="label-small">Hora del sistema</span>
+  </div>
+</div>

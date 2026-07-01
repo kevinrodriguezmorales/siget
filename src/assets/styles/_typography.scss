@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "Google Symbols";
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/googlesymbols/v441/HhyqU5Ak9u-oMExPeInvcuEmPosC9zS3FYkFU68cPrjdKM1XMoDZlWmzc3IiWvF1SbxVhQidBnv_C-yl9mm4Tw.woff2)
+    format("woff2");
+}
+
+.material-symbols {
+  font-family: "Google Symbols";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings:
+    "wght" 300,
+    "opsz" 24;
+}
+
+.title {
+  &-large {
+    font-family: var(--mat-sys-title-large-font);
+    line-height: var(--mat-sys-title-large-line-height);
+    font-size: var(--mat-sys-title-large-size);
+    letter-spacing: var(--mat-sys-title-large-tracking);
+    font-weight: var(--mat-sys-title-large-weight);
+  }
+  
+  &-medium {
+    font-family: var(--mat-sys-title-medium-font);
+    line-height: var(--mat-sys-title-medium-line-height);
+    font-size: var(--mat-sys-title-medium-size);
+    letter-spacing: var(--mat-sys-title-medium-tracking);
+    font-weight: var(--mat-sys-title-medium-weight);
+  }
+  
+  &-small {
+    font-family: var(--mat-sys-title-small-font);
+    line-height: var(--mat-sys-title-small-line-height);
+    font-size: var(--mat-sys-title-small-size);
+    letter-spacing: var(--mat-sys-title-small-tracking);
+    font-weight: var(--mat-sys-title-small-weight);
+  }
+}
+
+.headline {
+  &-large {
+    font-family: var(--mat-sys-headline-large-font);
+    line-height: var(--mat-sys-headline-large-line-height);
+    font-size: var(--mat-sys-headline-large-size);
+    letter-spacing: var(--mat-sys-headline-large-tracking);
+    font-weight: var(--mat-sys-headline-large-weight);
+  }
+
+  &-medium {
+    font-family: var(--mat-sys-headline-medium-font);
+    line-height: var(--mat-sys-headline-medium-line-height);
+    font-size: var(--mat-sys-headline-medium-size);
+    letter-spacing: var(--mat-sys-headline-medium-tracking);
+    font-weight: var(--mat-sys-headline-medium-weight);
+  }
+
+  &-small {
+    font-family: var(--mat-sys-headline-small-font);
+    line-height: var(--mat-sys-headline-small-line-height);
+    font-size: var(--mat-sys-headline-small-size);
+    letter-spacing: var(--mat-sys-headline-small-tracking);
+    font-weight: var(--mat-sys-headline-small-weight);
+  }
+}
+
+.label {
+  &-large {
+    font-family: var(--mat-sys-label-large-font);
+    line-height: var(--mat-sys-label-large-line-height);
+    font-size: var(--mat-sys-label-large-size);
+    letter-spacing: var(--mat-sys-label-large-tracking);
+    font-weight: var(--mat-sys-label-large-weight);
+  }
+
+  &-medium {
+    font-family: var(--mat-sys-label-medium-font);
+    line-height: var(--mat-sys-label-medium-line-height);
+    font-size: var(--mat-sys-label-medium-size);
+    letter-spacing: var(--mat-sys-label-medium-tracking);
+    font-weight: var(--mat-sys-label-medium-weight);
+  }
+
+  &-small {
+    font-family: var(--mat-sys-label-small-font);
+    line-height: var(--mat-sys-label-small-line-height);
+    font-size: var(--mat-sys-label-small-size);
+    letter-spacing: var(--mat-sys-label-small-tracking);
+    font-weight: var(--mat-sys-label-small-weight);
+  }
+}
+
+.body {
+  &-large {
+    line-height: var(--mat-sys-body-large-line-height);
+    font-size: var(--mat-sys-body-large-size);
+    letter-spacing: var(--mat-sys-body-large-tracking);
+    font-weight: var(--mat-sys-body-large-weight);
+  }
+
+  &-small {
+    line-height: var(--mat-sys-body-small-line-height);
+    font-size: var(--mat-sys-body-small-size);
+    letter-spacing: var(--mat-sys-body-small-tracking);
+    font-weight: var(--mat-sys-body-small-weight);
+  }
+}
+
+.font {
+  &-bold {
+    font-weight: 700;
+  }
+
+  &-semibold {
+    font-weight: 500;
+  }
+
+  &-regular {
+    font-weight: 400;
+  }
+}
+
+.icon {
+  &-small {
+    font-size: 1rem;
+  }
+}

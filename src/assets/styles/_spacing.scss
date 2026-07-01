@@ -1,0 +1,81 @@
+// Definimos un mapa con los tamaños
+$spacings: (
+  xxs: 0.25rem,
+  xs: 0.5rem,
+  sm: 1rem,
+  md: 1.5rem,
+  lg: 2rem,
+  xl: 3rem,
+  xxl: 4rem
+);
+
+// Mixin para generar clases de margen
+@mixin generate-margin($direction) {
+  @each $size, $value in $spacings {
+    .margin-#{$direction}-#{$size} {
+      margin-#{$direction}: $value;
+    }
+  }
+}
+
+@mixin generate-padding($direction) {
+  @each $size, $value in $spacings {
+    .padding-#{$direction}-#{$size} {
+      padding-#{$direction}: $value;
+    }
+  }
+}
+
+@mixin spacing-utilities() {
+  @each $size, $value in $spacings {
+    .margin-horizontal-#{$size} {
+      margin: 0 $value;
+    }
+
+    .margin-horizontal-#{$size} {
+      margin: 0 $value;
+    }
+
+    .margin-#{$size} {
+      margin: $value;
+    }
+
+    .padding-horizontal-#{$size} {
+      padding: 0 $value;
+    }
+
+    .padding-vertical-#{$size} {
+      padding: $value 0;
+    }
+
+    .padding-#{$size} {
+      padding: $value;
+    }
+  }
+}
+
+@mixin generate-gap() {
+  @each $size, $value in $spacings {
+    .gap-#{$size} {
+      gap: $value;
+    }
+  }
+}
+
+// Usamos el mixin para top y bottom
+@include generate-margin(top);
+@include generate-margin(bottom);
+
+@include generate-padding(top);
+@include generate-padding(bottom);
+@include generate-padding(right);
+@include generate-padding(left);
+
+@include generate-gap();
+
+@include spacing-utilities();
+
+.margin-horizontal-auto {
+  margin-right: auto;
+  margin-left: auto;
+}

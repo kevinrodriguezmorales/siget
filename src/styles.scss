@@ -3,100 +3,44 @@
 // components according to the Material 3 design spec.
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
-@use "@angular/material" as mat;
-@use "assets/themes/theme-typography" as *;
-@use "assets/themes/theme-colors.scss" as my-theme;
+@use "assets/styles/reset";
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
+@use "assets/styles/spacing";
+@use "assets/styles/typography";
+@use "assets/styles/color";
+@use "assets/styles/buttons";
+
+.container {
+  &-xl {
+    max-width: 75rem;
+  }
 }
 
-html {
-  height: 100%;
-  @include mat.theme(
-    (
-      color: (
-        primary: my-theme.$primary-palette,
-        secondary: my-theme.$secondary-palette,
-        tertiary: my-theme.$tertiary-palette,
-        neutral: my-theme.$neutral-palette,
-        neutral-variant: my-theme.$neutral-variant-palette
-      ),
-      typography: $my-typography,
-      density: 0
-    )
-  );
+.block {
+  display: block;
 }
 
-body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
-  color-scheme: light;
+.grid {
+  display: grid;
 
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-
-  // Reset the user agent margin.
-  margin: 0;
-  height: 100vh;
-  font-family: "Cabin";
-  font-size: 16px;
-}
-/* You can add global styles to this file, and also import other style files */
-
-img {
-  height: 100%;
-}
-
-h1,
-h2,
-h3 {
-  margin: 0;
-}
-
-.material-symbols-outlined.filled {
-  font-variation-settings:
-    "FILL" 1,
-    "wght" 400,
-    "GRAD" 0,
-    "opsz" 24;
-}
-
-@font-face {
-  font-family: "Google Symbols";
-  font-style: normal;
-  font-weight: 300 600;
-  font-display: block;
-  src: url(https://fonts.gstatic.com/s/googlesymbols/v441/HhyqU5Ak9u-oMExPeInvcuEmPosC9zS3FYkFU68cPrjdKM1XMoDZlWmzc3IiWvF1SbxVhQidBnv_C-yl9mm4Tw.woff2)
-    format("woff2");
-}
-
-.material-symbols {
-  font-family: "Google Symbols";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
-  font-variation-settings: "wght" 400, "opsz" 24;
+  &-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .flex {
   display: flex;
+}
 
+.flex-inline {
+  display: inline-flex;
+}
+
+.flex,
+.flex-inline {
   &-column {
     flex-direction: column;
   }
@@ -106,34 +50,24 @@ h3 {
   }
 }
 
-.flex-gap {
-  &-xxs {
-    gap: 0.25rem;
-  }
-
-  &-xs {
-    gap: 0.5rem;
-  }
-
-  &-s {
-    gap: 1rem;
-  }
-
-  &-m {
-    gap: 1.5rem;
-  }
-
-  &-l {
-    gap: 3rem;
-  }
-}
-
 .align-items-start {
   align-items: start;
 }
 
+.align-items-center {
+  align-items: center;
+}
+
 .align-items-end {
   align-items: end;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.align-items-baseline {
+  align-items: baseline;
 }
 
 .justify-content-center {
@@ -142,6 +76,28 @@ h3 {
 
 .justify-content-between {
   justify-content: space-between;
+}
+
+.justify-content-stretch {
+  justify-content: stretch;
+}
+
+.inner-layout {
+  height: calc(100% - 64px);
+}
+
+.inner-content {
+  flex-grow: 1;
+  padding: 0 16px 16px 8px;
+  height: calc(100% - 64px);
+}
+
+.main-panel,
+.secondary-panel {
+  background-color: var(--mat-sys-surface-container-lowest);
+  border-radius: 28px;
+  height: 100%;
+  overflow: auto;
 }
 
 // height: 100%;
