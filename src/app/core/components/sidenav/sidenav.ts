@@ -2,18 +2,18 @@ import { Component, inject } from '@angular/core';
 import { NavigationItem } from '../navigation-item/navigation-item';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
-import { NAVBAR_ITEMS, NavItem } from '@core/config/navbar.config';
-import { SubmenuStore } from '@services/submenu-store/submenu-store';
+import { SIDENAV_ITEMS, NavItem } from '@core/config/sidenav.config';
+import { ModuleNavigationStore } from '@services/module-navigation-store/module-navigation-store';
 
 @Component({
-  selector: 'navbar',
+  selector: 'sidenav',
   imports: [...MATERIAL_IMPORTS, NavigationItem, RouterLink, RouterLinkActive],
-  templateUrl: './navbar.html',
-  styleUrl: './navbar.scss',
+  templateUrl: './sidenav.html',
+  styleUrl: './sidenav.scss',
 })
-export class Navbar {
-  protected menuItems: NavItem[] = NAVBAR_ITEMS; 
-  readonly submenuStore = inject(SubmenuStore);
+export class Sidenav {
+  protected menuItems: NavItem[] = SIDENAV_ITEMS; 
+  readonly moduleNavigationStore = inject(ModuleNavigationStore);
   
   constructor(private router: Router) {}
 
@@ -21,8 +21,7 @@ export class Navbar {
     this.router.navigate([path]);
   }
 
-
-  protected toggleSubNavbar(): void {
-    this.submenuStore.toggle();
+  protected toggleModuleNavigation(): void {
+    this.moduleNavigationStore.toggle();
   }
 }

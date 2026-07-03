@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { InnerToolbar } from './inner-toolbar';
+import { Topbar } from './topbar;
 
-describe('InnerToolbar', () => {
-  let component: InnerToolbar;
-  let fixture: ComponentFixture<InnerToolbar>;
+describe('Topbar', () => {
+  let component: Topbar;
+  let fixture: ComponentFixture<Topbar>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InnerToolbar],
+      imports: [Topbar],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(InnerToolbar);
+    fixture = TestBed.createComponent(Topbar);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -1,21 +1,19 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTableModule } from '@angular/material/table';
-import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
-import { InnerToolbar } from '@core/components/inner-toolbar/inner-toolbar';
-import { SectionHeader } from '@core/components/section-header/section-header';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { SectionHeader } from '@core/components/section-header/section-header';
+import { Toolbar } from '@core/components/toolbar/toolbar';
 import { PanelStore } from '@services/panel-store/panel-store';
-import { Location } from '@angular/common';
+import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
 
 @Component({
   selector: 'list-employees',
   imports: [
     ...MATERIAL_IMPORTS,
-    MatToolbarModule,
     MatTableModule,
-    InnerToolbar,
+    Toolbar,
     SectionHeader,
     MatFormFieldModule,
     MatInputModule,
@@ -34,7 +32,6 @@ export class ListEmployees {
   protected openDetails(projectId: number): void {
     this.panelStore.openSecondaryPanel('view', { projectId });
   }
-
 
   protected goBack(): void {
     this.location.back();

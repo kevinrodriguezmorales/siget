@@ -1,0 +1,23 @@
+<button class="main-option" matFab extended>
+  <mat-icon>add_2</mat-icon>
+  Crear
+</button>
+
+<div class="navigation">
+  <button class="navigation-item" mat-button [routerLink]="'listar'" routerLinkActive="active">
+    <span class="material-symbols">assignment_ind</span>
+    Empleados
+  </button>
+  <button class="navigation-item" mat-button [routerLink]="'cuentas-de-usuarios'" routerLinkActive="active">
+    <span class="material-symbols">
+      account_box
+    </span>
+    Cuentas de usuarios
+  </button>
+  <button class="navigation-item" mat-button [routerLink]="'roles-y-permisos'" routerLinkActive="active">
+    <span class="material-symbols">
+      settings_account_box
+    </span>
+    Roles y permisos
+  </button>
+</div>

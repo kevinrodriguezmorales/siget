@@ -1,18 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { SubmenuStore } from '@services/submenu-store/submenu-store';
 import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
 
 @Component({
-  selector: 'sub-navbar',
+  selector: 'personnel-access-navigation',
   imports: [...MATERIAL_IMPORTS, CommonModule, RouterLink, RouterLinkActive],
-  templateUrl: './sub-navbar.html',
-  styleUrl: './sub-navbar.scss',
+  templateUrl: './personnel-access-navigation.html',
+  styleUrl: './personnel-access-navigation.scss',
 })
-export class SubNavbar {
-  readonly submenuStore = inject(SubmenuStore);
-
+export class PersonnelAccessNavigation {
   constructor(
     private router: Router,
     private route: ActivatedRoute,

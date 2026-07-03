@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { InnerToolbar } from '@core/components/inner-toolbar/inner-toolbar';
 import { ListItem } from '@core/components/list-item/list-item';
+import { Toolbar } from '@core/components/toolbar/toolbar';
 import { PanelStore } from '@services/panel-store/panel-store';
 import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
 import { parseEmployeeToListItems } from '@shared/utils/parse-employee';
@@ -49,7 +49,7 @@ export const employee: Employee = {
 
 @Component({
   selector: 'view-employee',
-  imports: [...MATERIAL_IMPORTS, InnerToolbar, ListItem],
+  imports: [...MATERIAL_IMPORTS, Toolbar, ListItem],
   templateUrl: './view-employee.html',
   styleUrl: './view-employee.scss',
 })

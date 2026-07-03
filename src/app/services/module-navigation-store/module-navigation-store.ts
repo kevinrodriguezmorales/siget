@@ -3,7 +3,7 @@ import { Injectable, Signal, signal } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class SubmenuStore {
+export class ModuleNavigationStore {
   private readonly openState = signal(true);
 
   readonly isOpen: Signal<boolean> = this.openState.asReadonly();

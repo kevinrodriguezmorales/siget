@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SubNavbar } from './sub-navbar';
+import { ModuleNavigation } from './module-navigation';
 
-describe('SubNavbar', () => {
-  let component: SubNavbar;
-  let fixture: ComponentFixture<SubNavbar>;
+describe('ModuleNavigation', () => {
+  let component: ModuleNavigation;
+  let fixture: ComponentFixture<ModuleNavigation>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SubNavbar],
+      imports: [ModuleNavigation],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SubNavbar);
+    fixture = TestBed.createComponent(ModuleNavigation);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
-import { Toolbar } from '@core/components/toolbar/toolbar';
-import { SectionHeader } from '@core/components/section-header/section-header';
-import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
-import { InformationContainer } from '@core/components/information-container/information-container';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { MatTableModule } from '@angular/material/table';
 import { DateHour } from '@core/components/date-hour/date-hour';
-import { InnerToolbar } from '@core/components/inner-toolbar/inner-toolbar';
+import { InformationContainer } from '@core/components/information-container/information-container';
+import { SectionHeader } from '@core/components/section-header/section-header';
+import { Toolbar } from '@core/components/toolbar/toolbar';
+import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
 
 export type ServiceOrderStatus =
   | 'Pendiente'
@@ -115,13 +113,12 @@ const dashboardMetricCards: DashboardMetricCard[] = [
   selector: 'app-home',
   imports: [
     ...MATERIAL_IMPORTS,
-    MatToolbarModule,
     MatTableModule,
     SectionHeader,
     InformationContainer,
     CommonModule,
     DateHour,
-    InnerToolbar
+    Toolbar
 ],
   templateUrl: './home.html',
   styleUrl: './home.scss',

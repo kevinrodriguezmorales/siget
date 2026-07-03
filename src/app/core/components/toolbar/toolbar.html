@@ -1,20 +1,3 @@
-<div class="toolbar">
-  <figure class="logo">
-    <img src="assets/images/siget-primary.svg" alt="">
-  </figure>
-
-  <button class="profile" matIconButton [matMenuTriggerFor]="menu">
-    <mat-icon>account_circle</mat-icon>
-  </button>
+<div class="toolbar flex align-items-center gap-xs">
+  <ng-content />
 </div>
-
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>
-    <span>Perfil</span>
-  </button>
-  <mat-divider />
-  <button mat-menu-item>
-    <mat-icon>logout</mat-icon>
-    <span>Cerrar sesión</span>
-  </button>
-</mat-menu>

@@ -4,7 +4,7 @@ export interface NavItem {
   route: string
 }
 
-export const NAVBAR_ITEMS: NavItem[] = [
+export const SIDENAV_ITEMS: NavItem[] = [
   { icon: 'home', label: 'Inicio', route: '/inicio' },
   { icon: 'settings', label: 'Personal y accesos', route: '/personal-y-accesos' },
   { icon: 'groups', label: 'Clientes', route: '/clientes' },

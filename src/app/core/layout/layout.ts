@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Navbar } from '@core/components/navbar/navbar';
-import { Toolbar } from '@core/components/toolbar/toolbar';
+import { Sidenav } from '@core/components/sidenav/sidenav';
+import { Topbar } from '@core/components/topbar/topbar';
 
 @Component({
   selector: 'layout',
-  imports: [RouterOutlet, Navbar, Toolbar],
+  imports: [RouterOutlet, Sidenav, Topbar],
   templateUrl: './layout.html',
   styleUrl: './layout.scss',
 })

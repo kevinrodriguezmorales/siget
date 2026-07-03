@@ -1,24 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SubNavbar } from '@core/components/sub-navbar/sub-navbar';
+import { ModuleNavigation } from '@core/components/module-navigation/module-navigation';
 import { PanelStore } from '@services/panel-store/panel-store';
 import { ViewEmployee } from './view-employee/view-employee';
-import { SubmenuStore } from '@services/submenu-store/submenu-store';
+import { ModuleNavigationStore } from '@services/module-navigation-store/module-navigation-store';
+import { PersonnelAccessNavigation } from '../components/personnel-access-navigation/personnel-access-navigation';
 
 @Component({
   selector: 'employees',
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    SubNavbar,
-    ViewEmployee
-  ],
+  imports: [CommonModule, RouterOutlet, ModuleNavigation, ViewEmployee, PersonnelAccessNavigation],
   providers: [PanelStore],
   templateUrl: './employees.html',
   styleUrl: './employees.scss',
 })
 export class Employees {
   readonly panelStore: PanelStore = inject(PanelStore);
-  readonly submenuStore = inject(SubmenuStore);
+  readonly submenuStore = inject(ModuleNavigationStore);
 }

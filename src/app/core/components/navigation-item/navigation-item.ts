@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NavItem } from '@core/config/navbar.config';
+import { NavItem } from '@core/config/sidenav.config';
 
 @Component({
   selector: 'navigation-item',

@@ -1,5 +1,7 @@
 <div class="layout-shell__workspace" [class.submenu-collapsed]="!submenuStore.isOpen()">
-  <sub-navbar />
+  <module-navigation>
+    <personnel-access-navigation></personnel-access-navigation>
+  </module-navigation>
 
   <div class="flex gap-sm">
     <div class="layout-shell__panel layout-shell__panel--primary">
