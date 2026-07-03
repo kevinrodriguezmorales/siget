@@ -1,28 +1,30 @@
-<div class="sub-navbar">
-  <button class="main-option" matFab extended>
-    <mat-icon>add_2</mat-icon>
-    Crear
-  </button>
-
-  <div class="navigation">
-    <button class="navigation__item" mat-button (click)="navigate('listar')">
-      <span class="material-symbols-outlined">assignment_ind</span>
-      Empleados
+@if(submenuStore.isOpen()){
+  <div class="sub-navbar">
+    <button class="main-option" matFab extended>
+      <mat-icon>add_2</mat-icon>
+      Crear
     </button>
-    <button class="navigation__item" mat-button>
-      <span class="material-symbols-outlined">
-        account_box
-      </span>
-      <!-- <span class="material-symbols-outlined filled">
-        garage_door
-      </span> -->
-      Usuarios
-    </button>
-    <button class="navigation__item" mat-button>
-      <span class="material-symbols-outlined">
-        settings_account_box
-      </span>
-      Roles y permisos
-    </button>
+  
+    <div class="navigation">
+      <button class="navigation-item" mat-button [routerLink]="'listar'" routerLinkActive="active">
+        <span class="material-symbols-outlined">assignment_ind</span>
+        Empleados
+      </button>
+      <button class="navigation-item" mat-button>
+        <span class="material-symbols-outlined">
+          account_box
+        </span>
+        <!-- <span class="material-symbols-outlined filled">
+          garage_door
+        </span> -->
+        Usuarios
+      </button>
+      <button class="navigation-item" mat-button>
+        <span class="material-symbols-outlined">
+          settings_account_box
+        </span>
+        Roles y permisos
+      </button>
+    </div>
   </div>
-</div>
+}

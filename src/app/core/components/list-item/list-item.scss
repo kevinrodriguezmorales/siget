@@ -1,0 +1,33 @@
+.list-item {
+  padding: 0.625rem 1rem;
+
+  &__wrapper {
+    display: flex;
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  &__leading {
+    padding: 0.25rem 0;
+
+    & .material-symbols {
+      font-size: 20px;
+      color: var(--mat-sys-on-surface-variant);
+    }
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.overline {
+  color: var(--mat-sys-on-surface-variant);
+  font-weight: 700;
+}
+
+.overline,
+.supporting {
+  color: var(--mat-sys-on-surface-variant);
+}

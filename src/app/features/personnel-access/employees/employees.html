@@ -1,6 +1,16 @@
-<div class="inner-layout flex">
-  <sub-navbar/>
-  <div class="inner-content">
-    <router-outlet />
+<div class="layout-shell__workspace" [class.submenu-collapsed]="!submenuStore.isOpen()">
+  <sub-navbar />
+
+  <div class="flex gap-sm">
+    <div class="layout-shell__panel layout-shell__panel--primary">
+      <router-outlet />
+    </div>
+
+    @if (panelStore.isSecondaryPanelOpen()) {
+    <div class="layout-shell__panel layout-shell__panel--secondary"
+      [ngClass]="{ 'layout-shell__panel--open': panelStore.isSecondaryPanelOpen() }">
+      <view-employee />
+    </div>
+    }
   </div>
 </div>

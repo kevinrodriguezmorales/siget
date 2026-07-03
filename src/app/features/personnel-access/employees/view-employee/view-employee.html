@@ -1,0 +1,49 @@
+<div class="content-panel">
+  <inner-toolbar>
+    <div class="flex-spacer"></div>
+    <button matIconButton>
+      <span class="material-symbols">edit</span>
+    </button>
+    <button matIconButton (click)="closePanel()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </inner-toolbar>
+
+  <div class="view-employee__banner">
+    <img src="../../../../../assets/images/background-contact.jpg" />
+  </div>
+
+  <div class="padding-vertical-lg padding-horizontal-md">
+    <div class="profile">
+      <div class="profile-avatar margin-bottom-sm">
+        <div class="avatar avatar--big">
+          <span class="avatar-initial">J</span>
+        </div>
+      </div>
+      <span class="profile-name headline-small font-bold">Juan Pérez Torres</span>
+    </div>
+    <div class="profile-data">
+      @for (item of employeeListItems; track item.overline) {
+      <list-item>
+        <span class="material-symbols" listItemIcon>
+          {{ item.icon }}
+        </span>
+
+        <ng-container listItemOverline>
+          {{ item.overline }}
+        </ng-container>
+
+        <ng-container listItemTitle>
+          {{ item.title }}
+        </ng-container>
+
+        @if (item.supporting) {
+        <ng-container listItemSupporting>
+          {{ item.supporting }}
+        </ng-container>
+        }
+      </list-item>
+      }
+    </div>
+  </div>
+</div>

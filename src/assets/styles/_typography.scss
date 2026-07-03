@@ -113,6 +113,13 @@
     font-weight: var(--mat-sys-body-large-weight);
   }
 
+  &-medium {
+    line-height: var(--mat-sys-body-medium-line-height);
+    font-size: var(--mat-sys-body-medium-size);
+    letter-spacing: var(--mat-sys-body-medium-tracking);
+    font-weight: var(--mat-sys-body-medium-weight);
+  }
+
   &-small {
     line-height: var(--mat-sys-body-small-line-height);
     font-size: var(--mat-sys-body-small-size);

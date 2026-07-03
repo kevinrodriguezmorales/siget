@@ -1,0 +1,24 @@
+.view-employee {
+  &__banner {
+    width: 100%;
+    height: 128px;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.profile {
+  &-avatar {
+    height: 16px;
+    position: relative;
+
+    & .avatar {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}

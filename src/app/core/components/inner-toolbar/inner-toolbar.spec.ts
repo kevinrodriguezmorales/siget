@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DateHour } from './date-hour';
+import { InnerToolbar } from './inner-toolbar';
 
-describe('DateHour', () => {
-  let component: DateHour;
-  let fixture: ComponentFixture<DateHour>;
+describe('InnerToolbar', () => {
+  let component: InnerToolbar;
+  let fixture: ComponentFixture<InnerToolbar>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DateHour],
+      imports: [InnerToolbar],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DateHour);
+    fixture = TestBed.createComponent(InnerToolbar);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

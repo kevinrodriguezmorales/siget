@@ -1,7 +1,7 @@
 .sub-navbar {
   padding: 8px;
-  max-width: 256px;
-  min-width: 256px;
+  max-width: var(--size-submenu);
+  min-width: var(--size-submenu);
 }
 
 .main-option {
@@ -10,20 +10,23 @@
 }
 
 .navigation {
-  &__item {
+  &-item {
     height: 56px;
     width: 100%;
     display: flex;
     justify-content: start;
+
+    &.active {
+      background-color: var(--mat-sys-secondary-container);
+      color: var(--mat-sys-on-secondary-container);
+    }
   }
 }
 
 :host {
   & ::ng-deep {
-
     .navigation {
-      &__item {
-
+      &-item {
         & .mdc-button__label {
           display: flex;
           align-items: center;

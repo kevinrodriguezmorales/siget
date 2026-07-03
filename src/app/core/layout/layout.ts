@@ -5,11 +5,7 @@ import { Toolbar } from '@core/components/toolbar/toolbar';
 
 @Component({
   selector: 'layout',
-  imports: [
-    RouterOutlet,
-    Navbar,
-    Toolbar
-  ],
+  imports: [RouterOutlet, Navbar, Toolbar],
   templateUrl: './layout.html',
   styleUrl: './layout.scss',
 })

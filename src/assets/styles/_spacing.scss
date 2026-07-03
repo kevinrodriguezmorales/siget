@@ -29,11 +29,13 @@ $spacings: (
 @mixin spacing-utilities() {
   @each $size, $value in $spacings {
     .margin-horizontal-#{$size} {
-      margin: 0 $value;
+      margin-right: $value;
+      margin-left: $value;
     }
 
-    .margin-horizontal-#{$size} {
-      margin: 0 $value;
+    .margin-vertical-#{$size} {
+      margin-top: $value;
+      margin-bottom: $value;
     }
 
     .margin-#{$size} {
@@ -41,11 +43,13 @@ $spacings: (
     }
 
     .padding-horizontal-#{$size} {
-      padding: 0 $value;
+      padding-right: $value;
+      padding-left: $value;
     }
 
     .padding-vertical-#{$size} {
-      padding: $value 0;
+      padding-top: $value;
+      padding-bottom: $value;
     }
 
     .padding-#{$size} {

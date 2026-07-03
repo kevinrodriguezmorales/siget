@@ -1,16 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DateHour } from './date-hour';
 
-describe('DateHour', () => {
-  let component: DateHour;
-  let fixture: ComponentFixture<DateHour>;
+import { ViewEmployee } from './view-employee';
+
+describe('ViewEmployee', () => {
+  let component: ViewEmployee;
+  let fixture: ComponentFixture<ViewEmployee>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DateHour],
+      imports: [ViewEmployee],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DateHour);
+    fixture = TestBed.createComponent(ViewEmployee);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -57,3 +57,32 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Architecture
+
+```text
+  index/
+  └─ wrapper-main/ <-
+     ├─ navbar/
+     └─ content-main/ <-
+        ├─ toolbar
+        └─ inner-content/ <-
+            └─ main-panel
+               ├─ inner-toolbar/
+               └─ container: contenido de la aplicación <-
+
+  index/
+  └─ wrapper-main/ <-
+     ├─ navbar/
+     └─ content-main/ <-
+        ├─ toolbar
+        └─ inner-content/ <-
+            ├─ sub-menu
+            ├─ main-panel
+            │   ├─ inner-toolbar/
+            │   └─ container: contenido de la aplicación
+            └─ secondary-panel
+                ├─ inner-toolbar/
+                └─ container: sub contenido de la aplicación
+  
+```

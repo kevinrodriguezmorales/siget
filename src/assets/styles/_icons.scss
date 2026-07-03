@@ -1,0 +1,10 @@
+.icon {
+  &-medium {
+    --size: 40px;
+    height: var(--size);
+    width: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

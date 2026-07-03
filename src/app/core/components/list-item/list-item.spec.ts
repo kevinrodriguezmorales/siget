@@ -1,16 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DateHour } from './date-hour';
 
-describe('DateHour', () => {
-  let component: DateHour;
-  let fixture: ComponentFixture<DateHour>;
+import { ListItem } from './list-item';
+
+describe('ListItem', () => {
+  let component: ListItem;
+  let fixture: ComponentFixture<ListItem>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DateHour],
+      imports: [ListItem],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DateHour);
+    fixture = TestBed.createComponent(ListItem);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

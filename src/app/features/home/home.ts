@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { DateHour } from '@core/components/date-hour/date-hour';
+import { InnerToolbar } from '@core/components/inner-toolbar/inner-toolbar';
 
 export type ServiceOrderStatus =
   | 'Pendiente'
@@ -119,7 +120,8 @@ const dashboardMetricCards: DashboardMetricCard[] = [
     SectionHeader,
     InformationContainer,
     CommonModule,
-    DateHour
+    DateHour,
+    InnerToolbar
 ],
   templateUrl: './home.html',
   styleUrl: './home.scss',

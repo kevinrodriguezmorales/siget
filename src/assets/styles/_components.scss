@@ -1,0 +1,29 @@
+.avatar {
+  --size: 2.5rem;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--mat-sys-corner-full);
+  background: var(--mat-sys-surface-container-high);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &-initial {
+    color: var(--mat-sys-on-secondary-container);
+    font-weight: 700;
+    font-size: var(--mat-sys-title-large-size);
+  }
+
+  &--big {
+    --size: 6rem;
+    border: 3px solid var(--mat-sys-surface-container-lowest);
+
+    & .avatar-initial {
+      font-family: var(--mat-sys-display-small-font);
+      font-size: var(--mat-sys-display-small-size);
+      line-height: var(--mat-sys-display-small-line-height);
+    }
+  }
+}
