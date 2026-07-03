@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ModuleNavigation } from '@core/components/module-navigation/module-navigation';
+import { ModuleNavigationStore } from '@services/module-navigation-store/module-navigation-store';
+import { PanelStore } from '@services/panel-store/panel-store';
+import { PersonnelAccessNavigation } from './components/personnel-access-navigation/personnel-access-navigation';
+import { ViewEmployee } from './views/view-employee/view-employee';
 
 @Component({
   selector: 'app-personnel-access',
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterOutlet, ModuleNavigation, ViewEmployee, PersonnelAccessNavigation],
+  providers: [PanelStore],
   templateUrl: './personnel-access.html',
   styleUrl: './personnel-access.scss',
 })
-export class PersonnelAccess {}
+export class PersonnelAccess {
+  readonly panelStore: PanelStore = inject(PanelStore);
+  readonly submenuStore = inject(ModuleNavigationStore);
+}

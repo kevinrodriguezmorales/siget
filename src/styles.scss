@@ -8,86 +8,19 @@
 @use "assets/styles/spacing";
 @use "assets/styles/typography";
 @use "assets/styles/color";
+@use "assets/styles/layout";
 @use "assets/styles/utilities";
 
 @use "assets/styles/icons";
 @use "assets/styles/buttons";
 @use "assets/styles/components";
 
-.container {
-  &-xl {
-    max-width: 75rem;
-  }
-}
-
 .block {
   display: block;
 }
 
-.grid {
-  display: grid;
-
-  &-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  &-4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-inline {
-  display: inline-flex;
-}
-
-.flex,
-.flex-inline {
-  &-column {
-    flex-direction: column;
-  }
-
-  &-grow {
-    flex-grow: 1;
-  }
-}
-
-.align-items-start {
-  align-items: start;
-}
-
-.align-items-center {
-  align-items: center;
-}
-
-.align-items-end {
-  align-items: end;
-}
-
-.align-items-stretch {
-  align-items: stretch;
-}
-
-.align-items-baseline {
-  align-items: baseline;
-}
-
-.justify-content-center {
-  justify-content: center;
-}
-
-.justify-content-between {
-  justify-content: space-between;
-}
-
-.justify-content-stretch {
-  justify-content: stretch;
-}
-
 .layout-shell__workspace {
-  height: calc(100% - 64px);
+  height: calc(100dvh - 64px);
   padding: 0 1rem 1rem 0;
 
   display: grid;
@@ -95,6 +28,10 @@
 
   &.submenu-collapsed {
     --size-submenu: 0px;
+  }
+
+  & > * {
+    min-height: 0;
   }
 }
 
@@ -138,6 +75,8 @@
 .content-panel {
   height: 100%;
   overflow: auto;
+
+  margin-right: -15px;
 }
 
     // height: 100%;

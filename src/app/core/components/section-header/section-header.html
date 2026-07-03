@@ -1,15 +1,15 @@
 <header [ngClass]="type">
   <ng-template #titleSlot>
-    <ng-content select="[headerTitle]"></ng-content>
+    <ng-content select="[title]"></ng-content>
   </ng-template>
 
   <ng-template #descriptionSlot>
-    <ng-content select="[headerDescription]"></ng-content>
+    <ng-content select="[description]"></ng-content>
   </ng-template>
 
   @switch (type) {
     @case ('page') {
-      <h2 class="header-title title-large font-bold">
+      <h2 class="header-title title-large">
         <ng-container [ngTemplateOutlet]="titleSlot"></ng-container>
       </h2>
 
@@ -19,7 +19,7 @@
     }
 
     @case ('section') {
-      <h3 class="header-title body-large font-bold">
+      <h3 class="header-title body-large">
         <ng-container [ngTemplateOutlet]="titleSlot"></ng-container>
       </h3>
 
@@ -29,7 +29,7 @@
     }
 
     @case ('form') {
-      <label [for]="forLabel" class="header-title">
+      <label for="{{ forLabel }}" class="header-title">
         <ng-container [ngTemplateOutlet]="titleSlot"></ng-container>
       </label>
 

@@ -1,0 +1,90 @@
+.container {
+  &-lg,
+  &-xl {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  &-lg {
+    max-width: 67rem;
+  }
+
+  &-xl {
+    max-width: 75rem;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-inline {
+  display: inline-flex;
+}
+
+.grid {
+  --grid-columns: repeat(2, minmax(0, 1fr));
+  --grid-rows: auto;
+
+  display: grid;
+  grid-template-columns: var(--grid-columns);
+  grid-template-rows: var(--grid-rows);
+}
+
+.flex,
+.flex-inline {
+  &-column {
+    flex-direction: column;
+  }
+
+  &-grow {
+    flex-grow: 1;
+  }
+}
+
+.align-items-start {
+  align-items: start;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: end;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-stretch {
+  justify-content: stretch;
+}
+
+.column-span {
+  --size: 2 grid-column: span var(--size);
+}
+
+.full-row {
+  grid-column: 1 / -1;
+}
+
+/**
+ * Use:
+ * <div class="grid" style="--grid-columns: repeat(3, minmax(0, 1fr));">
+ * 
+ * <div class="grid" style="--grid-columns: 240px minmax(0, 1fr);">
+ */

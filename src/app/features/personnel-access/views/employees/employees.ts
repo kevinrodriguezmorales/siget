@@ -1,4 +1,4 @@
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -9,25 +9,21 @@ import { PanelStore } from '@services/panel-store/panel-store';
 import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
 
 @Component({
-  selector: 'list-employees',
+  selector: 'employees',
   imports: [
     ...MATERIAL_IMPORTS,
-    MatTableModule,
+    CommonModule,
     Toolbar,
     SectionHeader,
     MatFormFieldModule,
     MatInputModule,
   ],
-  templateUrl: './list-employees.html',
-  styleUrl: './list-employees.scss',
+  templateUrl: './employees.html',
+  styleUrl: './employees.scss',
 })
-export class ListEmployees {
-  private readonly panelStore = inject(PanelStore);
+export class Employees {
+  readonly panelStore: PanelStore = inject(PanelStore);
   private readonly location = inject(Location);
-
-  protected openEditForm(): void {
-    this.panelStore.openSecondaryPanel('edit', null);
-  }
 
   protected openDetails(projectId: number): void {
     this.panelStore.openSecondaryPanel('view', { projectId });

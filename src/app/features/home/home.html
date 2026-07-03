@@ -9,7 +9,7 @@
         <h3 class="title-large font-bold">Dashboard</h3>
       </toolbar>
 
-      <div class="container-xl margin-top-md margin-horizontal-auto padding-horizontal-md">
+      <div class="container-xl margin-top-md margin-horizontal-auto">
         <div class="welcome margin-bottom-xl">
           <div class="flex justify-content-between">
             <div class="welcome-content">
@@ -23,13 +23,13 @@
         <section class="section-page margin-bottom-lg">
           <div class="margin-bottom-md">
             <section-header [type]="'section'">
-              <ng-container headerTitle>Operaciones frecuentes</ng-container>
-              <ng-container headerDescription>Continúa tus operaciones frecuentes más utilizados en el
+              <ng-container title>Operaciones frecuentes</ng-container>
+              <ng-container description>Continúa tus operaciones frecuentes más utilizados en el
                 taller.</ng-container>
             </section-header>
           </div>
 
-          <div class="grid grid-4 gap-md">
+          <div class="grid gap-md" style="--grid-columns: repeat(4, minmax(0, 1fr));">
             @for (item of list; track $index) {
             <div class="quick-access flex-inline align-items-center padding-xs justify-content-between">
               <div class="flex align-items-center gap-xs">
@@ -47,13 +47,13 @@
         <section class="section-page margin-bottom-lg">
           <div class="margin-bottom-md">
             <section-header [type]="'section'">
-              <ng-container headerTitle>Resumen operativo</ng-container>
-              <ng-container headerDescription>Revisa los principales registros y operaciones activas del
+              <ng-container title>Resumen operativo</ng-container>
+              <ng-container description>Revisa los principales registros y operaciones activas del
                 día.</ng-container>
             </section-header>
           </div>
 
-          <div class="grid grid-4 gap-md">
+          <div class="grid gap-md "style="--grid-columns: repeat(4, minmax(0, 1fr));">
             @for (item of metricCards; track $index) {
             <information-container [icon]="item.icon" [title]="item.title">
               <ng-container mainContent>

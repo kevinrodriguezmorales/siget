@@ -8,15 +8,11 @@ export const PERSONAL_ACCESS_ROUTES: Routes = [
       { path: '', redirectTo: 'empleados', pathMatch: 'full' },
       {
         path: 'empleados',
-        loadComponent: () => import('./employees/employees').then((m) => m.Employees),
-        children: [
-          { path: '', redirectTo: 'listar', pathMatch: 'full' },
-          {
-            path: 'listar',
-            loadComponent: () =>
-              import('./employees/list-employees/list-employees').then((m) => m.ListEmployees),
-          },
-        ],
+        loadComponent: () => import('./views/employees/employees').then((m) => m.Employees),
+      },
+      {
+        path: 'crear-empleado',
+        loadComponent: () => import('./views/create-employee/create-employee').then((m) => m.CreateEmployee),
       },
     ],
   },

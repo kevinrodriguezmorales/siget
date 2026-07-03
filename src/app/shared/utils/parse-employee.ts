@@ -1,5 +1,6 @@
 import { ListItemData } from "@core/components/list-item/list-item";
-import { Employee, EmployeeStatus } from "@features/personnel-access/employees/view-employee/view-employee";
+import { Employee, EmployeeStatus } from "@features/personnel-access/views/view-employee/view-employee";
+
 
 export function parseEmployeeToListItems(employee: Employee): ListItemData[] {
   return [

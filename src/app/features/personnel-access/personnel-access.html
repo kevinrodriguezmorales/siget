@@ -1,1 +1,18 @@
-<router-outlet/>
+<div class="layout-shell__workspace" [class.submenu-collapsed]="!submenuStore.isOpen()">
+  <module-navigation>
+    <personnel-access-navigation></personnel-access-navigation>
+  </module-navigation>
+
+  <div class="flex gap-sm">
+    <div class="layout-shell__panel layout-shell__panel--primary">
+      <router-outlet />
+    </div>
+
+    @if (panelStore.isSecondaryPanelOpen()) {
+    <div class="layout-shell__panel layout-shell__panel--secondary"
+      [ngClass]="{ 'layout-shell__panel--open': panelStore.isSecondaryPanelOpen() }">
+      <view-employee />
+    </div>
+    }
+  </div>
+</div>
