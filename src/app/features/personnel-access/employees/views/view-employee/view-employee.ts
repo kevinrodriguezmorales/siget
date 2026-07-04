@@ -1,45 +1,23 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { ListItem } from '@core/components/list-item/list-item';
 import { Toolbar } from '@core/components/toolbar/toolbar';
 import { PanelStore } from '@services/panel-store/panel-store';
 import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
-import { parseEmployeeToListItems } from '@shared/utils/parse-employee';
+import { Employee } from '../../models/employee-response.model';
+import { parseEmployeeToListItems } from '../../utils/parse-employee';
+import { EditEmployee } from '../edit-employee/edit-employee';
 
-export type EmployeeStatus = 'active' | 'inactive';
-
-export interface Employee {
-  fullName: string;
-
-  identityDocument: {
-    number: string;
-    type: string;
-  };
-
-  job: {
-    role: string;
-    area: string;
-  };
-
-  phoneNumber: string;
-  email: string;
-  address: string;
-  startDate: string;
-  status: EmployeeStatus;
-}
-
-export const employee: Employee = {
-  fullName: 'Juan Pérez Torres',
-
+export const EMPLOYEE: Employee = {
+  firstName: 'Juan',
+  lastName: 'Pérez Torres',
   identityDocument: {
     number: '70008765',
     type: 'DNI',
   },
-
   job: {
     role: 'Mecánico',
     area: 'Taller',
   },
-
   phoneNumber: '987876547',
   email: 'juan.perez@empresa.com',
   address: 'Los robles 125',
@@ -54,12 +32,20 @@ export const employee: Employee = {
   styleUrl: './view-employee.scss',
 })
 export class ViewEmployee {
-  private readonly panelStore = inject(PanelStore);
-  readonly employee = employee;
+  public employeeId = input<number | null>(null);
+
+  readonly employee = EMPLOYEE;
   readonly employeeListItems = parseEmployeeToListItems(this.employee);
 
+  private readonly panelStore = inject(PanelStore);
+
   protected closePanel(): void {
-    this.panelStore.closeSecondaryPanel();
+    this.panelStore.close();
   }
 
+  protected openEditEmployee(employeeId: number): void {
+    this.panelStore.open(EditEmployee, {
+      employeeId,
+    });
+  }
 }

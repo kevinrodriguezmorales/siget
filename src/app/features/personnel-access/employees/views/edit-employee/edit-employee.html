@@ -1,0 +1,16 @@
+<div class="content-panel">
+  <toolbar>
+    <div></div>
+    <div class="flex-spacer"></div>
+    <h3>Editar empleado</h3>
+    <div class="flex-spacer"></div>
+    <button matIconButton (click)="closePanel()">
+      <span class="material-symbols">close</span>
+    </button>
+  </toolbar>
+
+  <div class="padding-vertical-lg padding-horizontal-md">
+    <form-employee mode="edit" [initialValue]="employee" (formSubmit)="updateEmployee($event)"
+      (formCancel)="cancel()" />
+  </div>
+</div>

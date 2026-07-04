@@ -1,42 +1,40 @@
-import { computed, Injectable, Signal, signal } from '@angular/core';
+import { computed, Injectable, Signal, signal, Type } from '@angular/core';
 
-type SecondaryPanelType =
-  | 'edit'
-  | 'view';
+type SecondaryPanelType = 'edit' | 'view';
 
-interface SecondaryPanelState {
+export interface SecondaryPanelState {
   open: boolean;
-  type: SecondaryPanelType | null;
-  data: unknown | null;
+  component: Type<unknown> | null;
+  inputs: Record<string, unknown>;
 }
 
 @Injectable()
 export class PanelStore {
   private readonly secondaryPanelState = signal<SecondaryPanelState>({
     open: false,
-    type: null,
-    data: null
+    component: null,
+    inputs: {},
   });
 
-  readonly secondaryPanel = this.secondaryPanelState.asReadonly();
+  readonly secondaryPanel: Signal<SecondaryPanelState> = this.secondaryPanelState.asReadonly();
 
   readonly isSecondaryPanelOpen: Signal<boolean> = computed(() => {
     return this.secondaryPanelState().open;
   });
 
-  public openSecondaryPanel<T>(type: SecondaryPanelType, data: T): void {
+  open(component: Type<unknown>, inputs: Record<string, unknown> = {}): void {
     this.secondaryPanelState.set({
       open: true,
-      type,
-      data,
+      component,
+      inputs,
     });
   }
 
-  public closeSecondaryPanel(): void {
+  close(): void {
     this.secondaryPanelState.set({
       open: false,
-      type: null,
-      data: null
+      component: null,
+      inputs: {},
     });
   }
 }

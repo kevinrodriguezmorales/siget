@@ -1,6 +1,6 @@
-import { ListItemData } from "@core/components/list-item/list-item";
-import { Employee, EmployeeStatus } from "@features/personnel-access/views/view-employee/view-employee";
-
+import { ListItemData } from '@core/components/list-item/list-item';
+import { EmployeeStatus } from '@features/personnel-access/employees/models/employee.model';
+import { Employee } from '../models/employee-response.model';
 
 export function parseEmployeeToListItems(employee: Employee): ListItemData[] {
   return [

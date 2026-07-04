@@ -1,0 +1,19 @@
+<div class="content-panel">
+  <toolbar>
+    <button matIconButton (click)="goBack()">
+      <span class="material-symbols">arrow_back</span>
+    </button>
+  </toolbar>
+
+  <div class="container-lg">
+    <div class="margin-vertical-lg">
+      <div class="margin-bottom-md">
+        <section-header type="page">
+          <ng-container title>Registrar empleado</ng-container>
+        </section-header>
+      </div>
+
+      <form-employee mode="edit" (formSubmit)="createEmployee($event)" (formCancel)="cancel()" />
+    </div>
+  </div>
+</div>

@@ -20,6 +20,6 @@ export class PersonnelAccessNavigation {
 
   protected navigate(path: string) {
     this.router.navigate([path], { relativeTo: this.route });
-    this.panelStore.closeSecondaryPanel();
+    this.panelStore.close();
   }
 }

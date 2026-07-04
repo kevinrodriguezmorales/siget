@@ -8,10 +8,11 @@
       <router-outlet />
     </div>
 
-    @if (panelStore.isSecondaryPanelOpen()) {
+    @let panel = panelStore.secondaryPanel();
+    @if (panel.open && panel.component) {
     <div class="layout-shell__panel layout-shell__panel--secondary"
       [ngClass]="{ 'layout-shell__panel--open': panelStore.isSecondaryPanelOpen() }">
-      <view-employee />
+      <ng-container [ngComponentOutlet]="panel.component" [ngComponentOutletInputs]="panel.inputs" />
     </div>
     }
   </div>

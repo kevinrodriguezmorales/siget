@@ -1,7 +1,7 @@
 <div class="content-panel">
   <toolbar>
     <div class="flex-spacer"></div>
-    <button matIconButton>
+    <button matIconButton (click)="openEditEmployee(1)">
       <span class="material-symbols">edit</span>
     </button>
     <button matIconButton (click)="closePanel()">
@@ -20,7 +20,7 @@
           <span class="avatar-initial">J</span>
         </div>
       </div>
-      <span class="profile-name headline-small font-bold">Juan Pérez Torres</span>
+      <span class="profile-name headline-small font-bold">{{ employee.firstName + employee.lastName }}</span>
     </div>
     <div class="profile-data">
       @for (item of employeeListItems; track item.overline) {
