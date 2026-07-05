@@ -5,22 +5,25 @@
         <h2>Inicio de sesión</h2>
         <p>Ingresa tus credenciales para inicias sesión</p>
       </div>
-      <div class="login-form__body flex flex-column">
+      <form class="login-form__body flex flex-column" (ngSubmit)="login()">
         <div class="flex flex-column gap-xxs">
           <mat-form-field appearance="outline">
             <mat-label>Usuario</mat-label>
-            <input matInput placeholder="Ingresa tu usuario">
+            <input matInput placeholder="Ingresa tu usuario" [(ngModel)]="username" name="username">
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Contraseña</mat-label>
-            <input matInput type="password" placeholder="Ingresa tu contraseña">
-            <mat-icon matSuffix>visibility</mat-icon>
+            <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Ingresa tu contraseña"
+              [(ngModel)]="password" name="password">
+            <button matIconButton matSuffix (click)="togglePasswordVisibility()">
+              <span class="material-symbols">{{ hidePassword ? 'visibility' : 'visibility_off' }}</span>
+            </button>
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
         </div>
-        <button matButton="filled" [routerLink]="'/inicio'">Iniciar sesión</button>
-      </div>
+        <button matButton="filled" type="submit">Iniciar sesión</button>
+      </form>
     </div>
 
     <div class="login-welcome flex flex-column align-items-end justify-content-between flex-grow">
