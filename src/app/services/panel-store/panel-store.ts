@@ -6,6 +6,7 @@ export interface SecondaryPanelState {
   open: boolean;
   component: Type<unknown> | null;
   inputs: Record<string, unknown>;
+  type: SecondaryPanelType;
 }
 
 @Injectable()
@@ -14,6 +15,7 @@ export class PanelStore {
     open: false,
     component: null,
     inputs: {},
+    type: 'edit',
   });
 
   readonly secondaryPanel: Signal<SecondaryPanelState> = this.secondaryPanelState.asReadonly();
@@ -22,11 +24,20 @@ export class PanelStore {
     return this.secondaryPanelState().open;
   });
 
-  open(component: Type<unknown>, inputs: Record<string, unknown> = {}): void {
+  readonly secondaryPanelTypeClass: Signal<SecondaryPanelType> = computed(() => {
+    return this.secondaryPanelState().type;
+  });
+
+  open(
+    component: Type<unknown>,
+    inputs: Record<string, unknown> = {},
+    type: SecondaryPanelType = 'edit',
+  ): void {
     this.secondaryPanelState.set({
       open: true,
       component,
       inputs,
+      type,
     });
   }
 
@@ -35,6 +46,7 @@ export class PanelStore {
       open: false,
       component: null,
       inputs: {},
+      type: 'edit',
     });
   }
 }

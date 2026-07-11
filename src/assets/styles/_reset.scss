@@ -4,7 +4,10 @@
 @use "../themes/theme-typography" as *;
 
 :root {
+  --mat-sys-neutral95: #{map.get(my-theme.$neutral-variant-palette, 95)};
+
   --mat-sys-neutral-variant-50: #{map.get(my-theme.$neutral-variant-palette, 50)};
+
   --mat-sys-utility-success: #{map.get(my-theme.$utility-colors, 1)};
   --mat-sys-utility-danger: #{map.get(my-theme.$error-palette, 50)};
   --size-submenu: 256px;

@@ -1,16 +1,17 @@
-<form class="margin-bottom-lg" [formGroup]="form" (ngSubmit)="submit()">
-
+<form class="margin-bottom-lg" [ngClass]="'form--' + mode()" [formGroup]="form" (ngSubmit)="submit()">
   <!-- Basics -->
 
-  <div class="margin-bottom-md">
+  <div class="margin-top-md margin-bottom-sm form-header">
     <section-header type="section">
       <ng-container title>Datos básicos</ng-container>
+      @if(mode() === 'create') {
       <ng-container description>Ingresa la información principal del empleado para su registro en el
         sistema.</ng-container>
+      }
     </section-header>
   </div>
 
-  <div class="grid gap-sm margin-bottom-lg">
+  <div class="grid gap-sm margin-bottom-md form-block">
     <mat-form-field appearance="outline">
       <mat-label>Tipo de documento de identidad</mat-label>
       <mat-select formControlName="documentType" name="typeDocumentIdentity">
@@ -49,22 +50,24 @@
       <input matInput formControlName="lastName" placeholder="Apellidos">
       <!-- <mat-hint>Hint</mat-hint> -->
     </mat-form-field>
+  </div>
 
-    <div class="full-row padding-bottom-sm">
-      <mat-divider></mat-divider>
-    </div>
+  <div class="full-row padding-bottom-md">
+    <mat-divider></mat-divider>
   </div>
 
   <!-- Contact -->
 
-  <div class="margin-bottom-md">
+  <div class="margin-bottom-sm form-header">
     <section-header type="section">
       <ng-container title>Datos de contacto</ng-container>
+      @if(mode() === 'create') {
       <ng-container description>Registra los medios de comunicación y dirección del empleado.</ng-container>
+      }
     </section-header>
   </div>
 
-  <div class="grid gap-md margin-bottom-lg">
+  <div class="grid gap-sm margin-bottom-md form-block">
     <mat-form-field appearance="outline">
       <mat-label>Número telefónico</mat-label>
       <input matInput formControlName="phone" placeholder="Número telefónico">
@@ -91,23 +94,24 @@
       <input matInput formControlName="address" placeholder="Dirección">
       <!-- <mat-hint>Hint</mat-hint> -->
     </mat-form-field>
-
-    <div class="full-row padding-bottom-sm">
-      <mat-divider></mat-divider>
-    </div>
+  </div>
+  <div class="full-row padding-bottom-sm">
+    <mat-divider></mat-divider>
   </div>
 
   <!-- laboral -->
 
-  <div class="margin-bottom-md">
+  <div class="margin-bottom-sm form-header">
     <section-header type="section">
       <ng-container title>Datos laborales</ng-container>
+      @if(mode() === 'create') {
       <ng-container description>Registra información que vincula al trabajador con su rol dentro de la
         empresa.</ng-container>
+      }
     </section-header>
   </div>
 
-  <div class="grid gap-md margin-bottom-lg">
+  <div class="grid gap-sm form-block">
     <mat-form-field appearance="outline">
       <mat-label>Cargo o función</mat-label>
       <mat-select formControlName="jobRole" name="jobRole">
@@ -143,14 +147,16 @@
     <mat-slide-toggle formControlName="status" name="employeeStatus" id="employeeStatus" class="full-row">
       <section-header type="form" forLabel="employeeStatus-button">
         <ng-container title>Estado de empleado</ng-container>
+        @if(mode() === 'create') {
         <span description>Activa esta opción si el trabajador se encuentra actualmente en servicio.</span>
+        }
       </section-header>
     </mat-slide-toggle>
   </div>
 
-  <div class="flex padding-top-xs">
+  <div class="flex form-footer">
     <div class="flex-spacer"></div>
-    <div class="flex gap-xs">
+    <div class="flex gap-sm">
       <button matButton="outlined" (click)="cancel()">Cancelar</button>
       <button matButton="filled" type="submit">Aceptar</button>
     </div>

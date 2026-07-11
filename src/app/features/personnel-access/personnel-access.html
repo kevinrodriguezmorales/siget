@@ -3,7 +3,7 @@
     <personnel-access-navigation></personnel-access-navigation>
   </module-navigation>
 
-  <div class="flex gap-sm">
+  <div class="flex gap-md">
     <div class="layout-shell__panel layout-shell__panel--primary">
       <router-outlet />
     </div>
@@ -11,7 +11,8 @@
     @let panel = panelStore.secondaryPanel();
     @if (panel.open && panel.component) {
     <div class="layout-shell__panel layout-shell__panel--secondary"
-      [ngClass]="{ 'layout-shell__panel--open': panelStore.isSecondaryPanelOpen() }">
+      [class.layout-shell__panel--open]="panelStore.isSecondaryPanelOpen()"
+      [ngClass]="panelStore.secondaryPanelTypeClass()">
       <ng-container [ngComponentOutlet]="panel.component" [ngComponentOutletInputs]="panel.inputs" />
     </div>
     }

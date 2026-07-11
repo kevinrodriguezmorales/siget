@@ -29,7 +29,7 @@
             </section-header>
           </div>
 
-          <div class="grid gap-md" style="--grid-columns: repeat(4, minmax(0, 1fr));">
+          <div class="grid gap-sm" style="--grid-columns: repeat(4, minmax(0, 1fr));">
             @for (item of list; track $index) {
             <div class="quick-access flex-inline align-items-center padding-xs justify-content-between">
               <div class="flex align-items-center gap-xs">
@@ -53,7 +53,7 @@
             </section-header>
           </div>
 
-          <div class="grid gap-md "style="--grid-columns: repeat(4, minmax(0, 1fr));">
+          <div class="grid gap-sm" style="--grid-columns: repeat(4, minmax(0, 1fr));">
             @for (item of metricCards; track $index) {
             <information-container [icon]="item.icon" [title]="item.title">
               <ng-container mainContent>

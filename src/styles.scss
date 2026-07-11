@@ -21,7 +21,7 @@
 
 .layout-shell__workspace {
   height: calc(100dvh - 64px);
-  padding: 0 1rem 1rem 0;
+  padding: 0 1.5rem 1.5rem 0;
 
   display: grid;
   grid-template-columns: var(--size-submenu) minmax(0, 1fr);
@@ -61,7 +61,7 @@
 
 .layout-shell__panel--primary {
   width: 100%;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
 }
 
 .layout-shell__panel--secondary {
@@ -72,9 +72,29 @@
   }
 }
 
+.view {
+  --size: 32.5rem;
+  max-width: var(--size);
+  flex: 0 0 var(--size);
+}
+
+.edit {
+  --size: calc((100vw - (24px * 3)) / 2);
+  max-width: var(--size);
+  flex: 0 0 var(--size);
+}
+
 .content-panel {
   height: 100%;
   overflow: auto;
+}
+
+.user-event {
+  &--pointer {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
     // height: 100%;

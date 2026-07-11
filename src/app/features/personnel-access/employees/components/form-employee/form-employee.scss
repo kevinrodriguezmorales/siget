@@ -1,0 +1,12 @@
+.form {
+  &--edit {
+    & .form-header,
+    & .form-block {
+      padding: 0 1rem;
+    }
+
+    & .form-footer {
+      padding: 32px 16px 0;
+    }
+  }
+}

@@ -28,7 +28,7 @@ export class ListEmployees {
   protected viewEmployee(employeeId: number): void {
     this.panelStore.open(ViewEmployee, {
       employeeId,
-    });
+    }, "view");
   }
 
   protected goBack(): void {

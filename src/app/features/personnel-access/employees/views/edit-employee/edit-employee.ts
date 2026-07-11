@@ -31,7 +31,7 @@ export class EditEmployee {
   };
   public employeeId = input<number | null>(null);
 
-  private readonly panelStore = inject(PanelStore);
+  protected readonly panelStore = inject(PanelStore);
 
   protected updateEmployee(value: EmployeeFormValue): void {
     console.log('Editar empleado', value);

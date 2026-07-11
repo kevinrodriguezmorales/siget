@@ -24,6 +24,7 @@ export class Login {
   ) {}
 
   protected login(): void {
+    this._router.navigate(['/inicio']);
     this._auth
       .login({
         username: this.username,

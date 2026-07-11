@@ -7,16 +7,20 @@
 
 .contacts {
   &-header {
-    padding: 0.25rem 1.5rem;
+    padding: 0.25rem 1rem calc(0.25rem - 1px) 1rem;
     border-bottom: 1px solid var(--mat-sys-outline-variant);
+    font-size: var(--mat-sys-label-medium-size);
+    line-height: var(--mat-sys-label-medium-line-height);
+    background-color: var(--mat-sys-neutral95);
   }
 
   &-header:first-child {
     border-top: 1px solid var(--mat-sys-outline-variant);
+    padding: calc(0.25rem - 1px) 1rem;
   }
 
   &-item {
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-bottom: 1px solid var(--mat-sys-outline-variant);
 
     &__role {

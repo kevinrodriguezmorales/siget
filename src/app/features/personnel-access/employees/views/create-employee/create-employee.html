@@ -6,14 +6,14 @@
   </toolbar>
 
   <div class="container-lg">
-    <div class="margin-vertical-lg">
+    <div class="margin-top-md">
       <div class="margin-bottom-md">
         <section-header type="page">
           <ng-container title>Registrar empleado</ng-container>
         </section-header>
       </div>
 
-      <form-employee mode="edit" (formSubmit)="createEmployee($event)" (formCancel)="cancel()" />
+      <form-employee mode="create" (formSubmit)="createEmployee($event)" (formCancel)="cancel()" />
     </div>
   </div>
 </div>
