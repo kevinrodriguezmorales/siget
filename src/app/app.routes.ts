@@ -27,6 +27,13 @@ export const routes: Routes = [
             (m) => m.PERSONAL_ACCESS_ROUTES,
           ),
       },
+      {
+        path: 'servicios',
+        loadChildren: () =>
+          import('@features/services/services.routes').then(
+            (m) => m.SERVICES_ROUTES,
+          ),
+      },
     ],
   },
   { path: '**', redirectTo: 'login' },

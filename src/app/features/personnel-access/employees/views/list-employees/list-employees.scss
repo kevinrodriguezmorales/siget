@@ -1,9 +1,4 @@
-.search {
-  padding: 0.5rem;
-  background: var(--mat-sys-surface-bright);
-  margin-bottom: 2rem;
-  border-radius: var(--mat-sys-corner-large);
-}
+
 
 .contacts {
   &-header {
@@ -25,14 +20,6 @@
 
     &__role {
       color: var(--mat-sys-on-surface-variant);
-    }
-  }
-}
-
-:host::ng-deep {
-  .mat-form-field-appearance-fill {
-    & .mdc-text-field--filled {
-      border-radius: var(--mat-sys-corner-small);
     }
   }
 }

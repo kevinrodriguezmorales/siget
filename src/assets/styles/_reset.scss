@@ -9,8 +9,14 @@
   --mat-sys-neutral-variant-50: #{map.get(my-theme.$neutral-variant-palette, 50)};
 
   --mat-sys-utility-success: #{map.get(my-theme.$utility-colors, 1)};
+
   --mat-sys-utility-danger: #{map.get(my-theme.$error-palette, 50)};
+  
+  --mat-sys-utility-info20: #{map.get(my-theme.$utility-colors, 20)};
+  --mat-sys-utility-info21: #{map.get(my-theme.$utility-colors, 21)};
+
   --size-submenu: 256px;
+  --mat-form-field-container-height: 56px;
 }
 
 *,

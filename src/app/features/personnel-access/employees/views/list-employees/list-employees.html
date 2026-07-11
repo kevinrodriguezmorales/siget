@@ -6,24 +6,25 @@
   </toolbar>
 
   <div class="padding-horizontal-sm margin-vertical-md">
-    <div class="margin-bottom-md">
-      <section-header type="page">
-        <ng-container title>Empleados</ng-container>
-        <ng-container description>4 empleados</ng-container>
-      </section-header>
-    </div>
-
-    <div class="search">
-      <mat-form-field appearance="fill">
-        <input matInput placeholder="Buscar">
-        <mat-icon matSuffix>search</mat-icon>
-        <!-- <mat-hint>Hint</mat-hint> -->
-      </mat-form-field>
-      <div class="flex gap-xxs">
-        <span class="material-symbols icon-small">lightbulb</span>
-        <span class="body-small">Puedes buscar empleados por número de documento, nombre o apellido.</span>
+    <div class="margin-bottom-xs">
+      <div class="flex flex-wrap gap-xs align-items-center">
+        <section-header type="page">
+          <ng-container title>Empleados</ng-container>
+          <ng-container description>3 empleados</ng-container>
+        </section-header>
+        <div class="flex-spacer"></div>
+        <div class="input-small">
+          <mat-form-field appearance="fill">
+            <input matInput placeholder="Buscar">
+            <mat-icon matSuffix>search</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
       </div>
     </div>
+
+    <alert type="info" icon="info" description="Puedes buscar empleados por número de documento, nombre o apellido." />
+
   </div>
 
   <div class="contacts">

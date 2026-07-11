@@ -1,0 +1,111 @@
+<div class="content-panel">
+  <toolbar>
+    <button matIconButton (click)="goBack()">
+      <span class="material-symbols">arrow_back</span>
+    </button>
+  </toolbar>
+
+  <div class="padding-horizontal-sm margin-vertical-md">
+    <div class="margin-bottom-md">
+      <section-header type="page">
+        <ng-container title>Ordenes de servicios</ng-container>
+        <ng-container description>4 empleados</ng-container>
+      </section-header>
+    </div>
+
+    <div class="search">
+      <div class="flex flex-wrap">
+        <div class="input-small">
+          <mat-form-field appearance="fill">
+            <input matInput placeholder="Buscar">
+            <mat-icon matSuffix>search</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <div class="flex-spacer"></div>
+        <div class="flex gap-xs flex-wrap">
+          <div class="input-small input-variant">
+            <mat-form-field appearance="outline">
+              <mat-label>Estado</mat-label>
+              <mat-select name="orderStatus">
+                @for (status of orderStatus; track orderStatus) {
+                <mat-option [value]="status.value">{{status.viewValue}}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="input-small input-variant">
+            <mat-form-field appearance="outline">
+              <mat-label>Última actualización</mat-label>
+              <input matInput formControlName="startDate" [matDatepicker]="picker">
+              <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <alert type="info" icon="info"
+        description="Puedes buscar empleados por número de orden, cliente, placa de motocicleta, estado o último actualización." />
+    </div>
+
+    <information-container icon="checklist_rtl" title="Órdenes de servicio">
+      <ng-container mainContent>
+        <div class="table-container">
+          <div class="table--large">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+              <ng-container matColumnDef="code">
+                <th mat-header-cell *matHeaderCellDef> N.° orden </th>
+                <td mat-cell *matCellDef="let element"  (click)="viewOrder(1)"> {{element.code}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="customer">
+                <th mat-header-cell *matHeaderCellDef> Cliente </th>
+                <td mat-cell *matCellDef="let element"> {{element.customer}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="motorcycle">
+                <th mat-header-cell *matHeaderCellDef> Motocicleta </th>
+                <td mat-cell *matCellDef="let element"> {{element.motorcycle}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="plate">
+                <th mat-header-cell *matHeaderCellDef> Placa </th>
+                <td mat-cell *matCellDef="let element"> {{element.plate}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef> Estado </th>
+                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="responsible">
+                <th mat-header-cell *matHeaderCellDef> Responsable </th>
+                <td mat-cell *matCellDef="let element"> {{element.responsible}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="lastUpdated">
+                <th mat-header-cell *matHeaderCellDef> Última actualización </th>
+                <td mat-cell *matCellDef="let element"> {{element.lastUpdated}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Acción </th>
+                <td mat-cell *matCellDef="let element">
+                  <button matIconButton class="button-medium">
+                    <span class="material-symbols">document_search</span>
+                  </button>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+      </ng-container>
+    </information-container>
+  </div>
+
+</div>

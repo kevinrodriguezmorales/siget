@@ -1,0 +1,20 @@
+<div class="layout-shell__workspace" [class.submenu-collapsed]="!submenuStore.isOpen()">
+  <module-navigation>
+    <service-order-navigation></service-order-navigation>
+  </module-navigation>
+
+  <div class="flex gap-md">
+    <div class="layout-shell__panel layout-shell__panel--primary">
+      <router-outlet />
+    </div>
+
+    @let panel = panelStore.secondaryPanel();
+    @if (panel.open && panel.component) {
+    <div class="layout-shell__panel layout-shell__panel--secondary"
+      [class.layout-shell__panel--open]="panelStore.isSecondaryPanelOpen()"
+      [ngClass]="panelStore.secondaryPanelTypeClass()">
+      <ng-container [ngComponentOutlet]="panel.component" [ngComponentOutletInputs]="panel.inputs" />
+    </div>
+    }
+  </div>
+</div>

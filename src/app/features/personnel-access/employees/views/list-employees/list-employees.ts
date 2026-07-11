@@ -7,6 +7,7 @@ import { Toolbar } from '@core/components/toolbar/toolbar';
 import { PanelStore } from '@services/panel-store/panel-store';
 import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
 import { ViewEmployee } from '../view-employee/view-employee';
+import { Alert } from '@core/components/alert/alert';
 
 @Component({
   selector: 'employees',
@@ -17,6 +18,7 @@ import { ViewEmployee } from '../view-employee/view-employee';
     SectionHeader,
     MatFormFieldModule,
     MatInputModule,
+    Alert
   ],
   templateUrl: './list-employees.html',
   styleUrl: './list-employees.scss',

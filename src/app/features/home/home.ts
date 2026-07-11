@@ -5,24 +5,8 @@ import { DateHour } from '@core/components/date-hour/date-hour';
 import { InformationContainer } from '@core/components/information-container/information-container';
 import { SectionHeader } from '@core/components/section-header/section-header';
 import { Toolbar } from '@core/components/toolbar/toolbar';
+import { SERVICE_ORDERS } from '@features/services/service-order/models/service-order.model';
 import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
-
-export type ServiceOrderStatus =
-  | 'Pendiente'
-  | 'En diagnóstico'
-  | 'En proceso'
-  | 'En revisión'
-  | 'Finalizada';
-
-export type ServiceOrderResponsible = 'Vendedor' | 'Mecánico' | 'Cajero';
-
-export interface ServiceOrderSummary {
-  code: string;
-  customer: string;
-  motorcycle: string;
-  status: ServiceOrderStatus;
-  responsible: ServiceOrderResponsible;
-}
 
 export type MetricTrend = 'up' | 'down';
 export type MetricTone = 'positive' | 'negative' | 'neutral';
@@ -35,44 +19,6 @@ export interface DashboardMetricCard {
   description: string;
   icon: string;
 }
-
-const ordenesServicioResumen: ServiceOrderSummary[] = [
-  {
-    code: 'OS-001',
-    customer: 'Juan Pérez',
-    motorcycle: 'Honda Wave',
-    status: 'Pendiente',
-    responsible: 'Vendedor',
-  },
-  {
-    code: 'OS-002',
-    customer: 'Ana Torres',
-    motorcycle: 'Yamaha FZ',
-    status: 'En diagnóstico',
-    responsible: 'Mecánico',
-  },
-  {
-    code: 'OS-003',
-    customer: 'Luis Ramos',
-    motorcycle: 'Bajaj Pulsar',
-    status: 'En proceso',
-    responsible: 'Mecánico',
-  },
-  {
-    code: 'OS-004',
-    customer: 'Carla Medina',
-    motorcycle: 'Honda XR',
-    status: 'En revisión',
-    responsible: 'Mecánico',
-  },
-  {
-    code: 'OS-005',
-    customer: 'Pedro Salazar',
-    motorcycle: 'Suzuki GN125',
-    status: 'Finalizada',
-    responsible: 'Cajero',
-  },
-];
 
 const dashboardMetricCards: DashboardMetricCard[] = [
   {
@@ -134,6 +80,6 @@ export class Home {
     'responsible',
     'action'
   ];
-  protected dataSource = ordenesServicioResumen;
+  protected dataSource = SERVICE_ORDERS;
   protected metricCards: DashboardMetricCard[] = dashboardMetricCards;
 }

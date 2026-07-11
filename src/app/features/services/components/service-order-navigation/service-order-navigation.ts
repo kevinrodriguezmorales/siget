@@ -1,19 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { PERSONAL_ACCESS_NAVIGATION_MENU } from '@features/personnel-access/config/employee-navigation';
+import { SERVICE_NAVIGATION_MENU } from '@features/services/config/service-order-navigation';
 import { PanelStore } from '@services/panel-store/panel-store';
 import { MATERIAL_IMPORTS } from '@shared/material/material-imports';
 
 @Component({
-  selector: 'personnel-access-navigation',
+  selector: 'service-order-navigation',
   imports: [...MATERIAL_IMPORTS, CommonModule, RouterLink, RouterLinkActive],
-  templateUrl: './personnel-access-navigation.html',
-  styleUrl: './personnel-access-navigation.scss',
+  templateUrl: './service-order-navigation.html',
+  styleUrl: './service-order-navigation.scss',
 })
-export class PersonnelAccessNavigation {
+export class ServiceOrderNavigation {
   readonly panelStore: PanelStore = inject(PanelStore);
-  protected readonly menuItems = PERSONAL_ACCESS_NAVIGATION_MENU;
+  protected readonly menuItems = SERVICE_NAVIGATION_MENU;
 
   constructor(
     private router: Router,

@@ -1,0 +1,159 @@
+<div class="content-panel">
+  <toolbar>
+    <div class="flex-spacer"></div>
+    <button matIconButton (click)="openEditOrder('1')">
+      <span class="material-symbols">edit</span>
+    </button>
+    <button matIconButton (click)="closePanel()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </toolbar>
+
+  <div class="service-order__header flex align-items-center padding-horizontal-sm padding-vertical-md">
+    <div class="service-order__number">
+      <span class="label-small font-uppercase block">Número de orden</span>
+      <span class="title-large font-bold">{{ order.code }}</span>
+    </div>
+    <div class="flex-spacer"></div>
+    <div class="service-order__status">
+      <span>{{ statusLabel[order.status] }}</span>
+      <span class="status-dot__container">
+        <span class="status" [ngClass]="statusColor[order.status]"></span>
+      </span>
+    </div>
+  </div>
+
+  <list-item>
+    <span class="material-symbols" listItemIcon>
+      calendar_month
+    </span>
+
+    <ng-container listItemOverline>
+      Última modificación
+    </ng-container>
+
+    <ng-container listItemTitle>
+      {{ order.lastUpdated }}
+    </ng-container>
+  </list-item>
+
+  <list-item>
+    <span class="material-symbols" listItemIcon>
+      list_alt
+    </span>
+
+    <ng-container listItemOverline>
+      Solicitud de servicio
+    </ng-container>
+
+    <ng-container listItemTitle>
+      {{ order.serviceRequestCode }}
+    </ng-container>
+  </list-item>
+
+  <list-item>
+    <span class="material-symbols" listItemIcon>
+      list_alt
+    </span>
+
+    <ng-container listItemOverline>
+      Cotización
+    </ng-container>
+
+    <ng-container listItemTitle>
+      {{ order.quotationCode }}
+    </ng-container>
+  </list-item>
+
+  <list-item>
+    <span class="material-symbols" listItemIcon>
+      person
+    </span>
+
+    <ng-container listItemOverline>
+      Cliente
+    </ng-container>
+
+    <ng-container listItemTitle>
+      {{ order.customer.fullName }}
+    </ng-container>
+
+    <ng-container listItemSupporting>
+      {{ order.customer.phone }}
+    </ng-container>
+  </list-item>
+
+  <list-item>
+    <span class="material-symbols" listItemIcon>
+      two_wheeler
+    </span>
+
+    <ng-container listItemOverline>
+      Motocicleta
+    </ng-container>
+
+    <ng-container listItemTitle>
+      {{ order.motorcycle.model }}
+    </ng-container>
+
+    <ng-container listItemSupporting>
+      {{ order.motorcycle.plate }}
+    </ng-container>
+  </list-item>
+
+  <list-item>
+    <span class="material-symbols" listItemIcon>
+      assignment
+    </span>
+
+    <ng-container listItemOverline>
+      Problema reportado
+    </ng-container>
+
+    <ng-container listItemTitle>
+      {{ order.reportedProblem }}
+    </ng-container>
+  </list-item>
+
+  <list-item>
+    <span class="material-symbols" listItemIcon>
+      troubleshoot
+    </span>
+
+    <ng-container listItemOverline>
+      Diagnóstico previo
+    </ng-container>
+
+    <ng-container listItemTitle>
+      {{ order.previousDiagnosis }}
+    </ng-container>
+  </list-item>
+
+  <list-item>
+    <span class="material-symbols" listItemIcon>build</span>
+
+    <ng-container listItemOverline>
+      Servicios realizados
+    </ng-container>
+
+    <ng-container listItemSupporting>
+      <ul class="service-order-detail__services">
+        @for (service of order.completedServices; track $index) {
+        <li>{{ service }}</li>
+        }
+      </ul>
+    </ng-container>
+  </list-item>
+
+  <list-item>
+    <span class="material-symbols" listItemIcon>assignment</span>
+
+    <ng-container listItemOverline>
+      Observaciones
+    </ng-container>
+
+    <ng-container listItemTitle>
+      {{ order.observations }}
+    </ng-container>
+  </list-item>
+</div>

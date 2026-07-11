@@ -1,0 +1,29 @@
+.main-option {
+  box-shadow: none;
+  margin-bottom: 16px;
+}
+
+.submenu {
+  &-item {
+    height: 56px !important;
+    width: 100%;
+    display: flex !important;
+    justify-content: start !important;
+
+    &.active {
+      background-color: var(--mat-sys-secondary-container);
+      color: var(--mat-sys-on-secondary-container);
+    }
+  }
+}
+.submenu {
+  &-item {
+    & .mdc-button__label {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 8px;
+      font-weight: 600;
+    }
+  }
+}

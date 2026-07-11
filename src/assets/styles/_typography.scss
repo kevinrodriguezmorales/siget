@@ -25,6 +25,7 @@
   font-variation-settings:
     "wght" 300,
     "opsz" 24;
+  color: currentColor;
 }
 
 .title {
@@ -35,7 +36,7 @@
     letter-spacing: var(--mat-sys-title-large-tracking);
     font-weight: var(--mat-sys-title-large-weight);
   }
-  
+
   &-medium {
     font-family: var(--mat-sys-title-medium-font);
     line-height: var(--mat-sys-title-medium-line-height);
@@ -43,7 +44,7 @@
     letter-spacing: var(--mat-sys-title-medium-tracking);
     font-weight: var(--mat-sys-title-medium-weight);
   }
-  
+
   &-small {
     font-family: var(--mat-sys-title-small-font);
     line-height: var(--mat-sys-title-small-line-height);
@@ -139,6 +140,10 @@
 
   &-regular {
     font-weight: 400;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
   }
 }
 

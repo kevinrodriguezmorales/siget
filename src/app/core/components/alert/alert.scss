@@ -1,0 +1,9 @@
+.alert {
+  display: inline-flex;
+  border-radius: var(--mat-sys-corner-small);
+
+  &.info {
+    background: var(--mat-sys-utility-info21);
+    border: 1px solid var(--mat-sys-utility-info20);
+  }
+}

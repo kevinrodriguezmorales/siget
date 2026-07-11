@@ -31,3 +31,11 @@
 .supporting {
   color: var(--mat-sys-on-surface-variant);
 }
+
+:host ::ng-deep {
+  .material-symbols {
+    font-size: 20px;
+    color: var(--mat-sys-on-surface-variant);
+    font-variation-settings: "wght" 400, "opsz" 20;
+  }
+}
